@@ -17,7 +17,6 @@ namespace _2P_Aplicada2.Entidades
 
             return retorno;
         }
-
         public static decimal ToDecimal(this string valor)
         {
             decimal.TryParse(valor, out decimal retorno);
@@ -29,12 +28,10 @@ namespace _2P_Aplicada2.Entidades
             page.ClientScript.RegisterStartupScript(page.GetType(), "toastr_message",
                   String.Format("toastr.{0}('{1}', '{2}');", type.ToLower(), message, title), addScriptTags: true);
         }
-
         public static void CallJsFunction(Page page, Type type, string functionName)
         {
             page.ClientScript.RegisterStartupScript(type, "CallMyFunction", functionName, true);
         }
-
         public static DateTime ToDatetime(this object obj)
         {
             DateTime.TryParse(obj.ToString(), out DateTime value);
@@ -46,7 +43,6 @@ namespace _2P_Aplicada2.Entidades
         {
             return dateTime.ToString(FECHA_FORMAT);
         }
-
         public static void ClearControls(Control control, List<Type> controlsToClear)
         {
             foreach (Control c in control.Controls)
@@ -65,7 +61,6 @@ namespace _2P_Aplicada2.Entidades
                 }
             }
         }
-
         public static void FillGrid<T>(GridView gv, List<T> lista)
         {
             gv.DataSource = null;
@@ -73,7 +68,6 @@ namespace _2P_Aplicada2.Entidades
             gv.DataSource = lista;
             gv.DataBind();
         }
-
         public static string Hash(string input) { var hash = (new SHA1Managed()).ComputeHash(Encoding.UTF8.GetBytes(input));
             return string.Join("", hash.Select(b => b.ToString("x2")).ToArray()); }
     }
