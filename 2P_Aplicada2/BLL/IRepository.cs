@@ -16,3 +16,4 @@ namespace _2P_Aplicada2.BLL
         List<T> GetList(Expression<Func<T, bool>> expression);
     }
 }
+
